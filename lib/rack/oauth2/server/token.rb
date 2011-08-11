@@ -37,6 +37,8 @@ module Rack
               ClientCredentials
             when 'refresh_token'
               RefreshToken
+            when 'auth_provider'
+              AuthProvider
             when ''
               attr_missing!
             else
@@ -72,3 +74,4 @@ require 'rack/oauth2/server/token/authorization_code'
 require 'rack/oauth2/server/token/password'
 require 'rack/oauth2/server/token/client_credentials'
 require 'rack/oauth2/server/token/refresh_token'
+require 'rack/oauth2/server/token/auth_provider'
