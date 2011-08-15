@@ -22,6 +22,16 @@ module Rack
               attr_missing!
             end
           end
+
+          class Response < Token::Response
+            attr_optional :user_identifier
+
+            def protocol_params
+              hash = super
+              hash[:user_identifier] = self.user_identifier
+              hash
+            end
+          end
         end
       end
     end
