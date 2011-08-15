@@ -24,11 +24,11 @@ module Rack
           end
 
           class Response < Token::Response
-            attr_optional :user_identifier
+            attr_optional :user_email
 
             def protocol_params
               hash = super
-              hash[:user_identifier] = self.user_identifier
+              hash[:user_email] = self.user_email
               hash
             end
           end
